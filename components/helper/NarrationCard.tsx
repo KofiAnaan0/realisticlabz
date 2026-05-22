@@ -24,7 +24,7 @@ const voices = [
 ];
 
 const languages = [
-	{ code: "sw", label: "Swahili", flag: "🇹🇿" },
+	{ code: "sw", label: "Swahili", flag: "🇰🇪" },
 	{ code: "en-KE", label: "English (KE)", flag: "🇰🇪" },
 	{ code: "lg", label: "Luganda", flag: "🇺🇬" },
 	{ code: "en-UG", label: "English (UG)", flag: "🇺🇬" },

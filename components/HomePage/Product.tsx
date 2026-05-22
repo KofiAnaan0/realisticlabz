@@ -30,7 +30,7 @@ const Product = () => {
 				</div>
 
 				{/* translation */}
-				<div className="space-y-8">
+				<div className="space-y-8 lg:w-[75%]">
 					{/* title - sticky at top */}
 					<H2>Translation Model</H2>
 

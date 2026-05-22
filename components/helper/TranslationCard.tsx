@@ -35,13 +35,13 @@ const Translation = () => {
 			<div className="flex flex-col lg:flex-row">
 				{/* LEFT */}
 				<div className="lg:w-[42%] border-b lg:border-b-0 lg:border-r border-white/10 p-6 lg:p-8">
-					<div className="mb-8">
+					<div className="mb-8 text-center lg:text-start">
 						<h3 className="text-xl font-bold text-white mb-2">
 							Upload Audio or Video
 						</h3>
 
 						<p className="text-sm text-gray-300 leading-relaxed">
-							Upload a local audio/video file or paste a YouTube URL for
+							Upload a local audio/video file for
 							multilingual translation.
 						</p>
 					</div>
@@ -93,14 +93,14 @@ const Translation = () => {
 				<div className="lg:w-[58%] p-6 lg:p-8 flex flex-col justify-between">
 					<div>
 						<div className="mb-6">
-							<h3 className="text-xl font-bold text-white mb-2">
-								Translate Content
+							<h3 className="text-xl text-center lg:text-start font-bold text-white mb-2">
+								Paste YouTube URL 
 							</h3>
 
-							<p className="text-sm text-gray-300">
+							{/* <p className="text-sm text-gray-300">
 								Translate audio or video into African languages with realistic
 								speech synthesis.
-							</p>
+							</p> */}
 						</div>
 
 						{/* YouTube URL */}
@@ -121,40 +121,57 @@ const Translation = () => {
 						{/* Language Selection */}
 						<div>
 							<label className="text-sm text-gray-300 mb-3 block">
-								Translation Language
+								Select Language
 							</label>
 
-							<div className="grid grid-cols-2 gap-4">
-								{languages.map((lang) => {
-									const active = selectedLang.code === lang.code;
+							<div className="relative">
+	<select
+		value={selectedLang.code}
+		onChange={(e) => {
+			const lang = languages.find(
+				(l) => l.code === e.target.value
+			);
 
-									return (
-										<button
-											key={lang.code}
-											onClick={() => setSelectedLang(lang)}
-											className={`rounded-2xl border px-5 py-4 transition-all duration-300 flex items-center gap-3 ${
-												active
-													? "bg-white text-black border-white"
-													: "bg-white/5 border-white/10 text-white hover:bg-white/10"
-											}`}
-										>
-											<span className="text-xl">{lang.flag}</span>
+			if (lang) {
+				setSelectedLang(lang);
+			}
+		}}
+		className="w-full appearance-none rounded-2xl bg-black/20 border border-white/10 px-5 py-4 pr-12 text-white focus:outline-none focus:ring-2 focus:ring-[#7AE2CF]/50"
+	>
+		{languages.map((lang) => (
+			<option
+				key={lang.code}
+				value={lang.code}
+				className="bg-[#1E1B1A] text-white"
+			>
+				{lang.flag} {lang.label}
+			</option>
+		))}
+	</select>
 
-											<span className="font-medium">{lang.label}</span>
-										</button>
-									);
-								})}
-							</div>
+	{/* dropdown icon */}
+	<div className="pointer-events-none absolute inset-y-0 right-5 flex items-center">
+		<svg
+			className="w-4 h-4 text-gray-400"
+			fill="none"
+			stroke="currentColor"
+			viewBox="0 0 24 24"
+		>
+			<path
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				strokeWidth={2}
+				d="M19 9l-7 7-7-7"
+			/>
+		</svg>
+	</div>
+</div>
 						</div>
 					</div>
 
 					{/* Bottom */}
-					<div className="mt-8 flex items-center justify-between">
-						<div>
-							<p className="text-sm text-gray-300">Output Language</p>
-
-							<h4 className="text-white font-semibold">{selectedLang.label}</h4>
-						</div>
+					<div className="mt-8 flex items-center justify-center lg:justify-end">
+						
 
 						<button
 							onClick={handleTranslate}
@@ -181,7 +198,7 @@ const Translation = () => {
 											d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 5.5A18.022 18.022 0 0015.588 9m-3.54 5.5L21 21"
 										/>
 									</svg>
-									Translate
+									Coming Soon
 								</>
 							)}
 						</button>

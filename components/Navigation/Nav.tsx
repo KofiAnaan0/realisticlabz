@@ -8,6 +8,7 @@ import React, { useEffect, useState } from "react";
 import { RiMenuFill } from "react-icons/ri";
 import { Button } from "../ui/Button";
 import Logo from "@/public/logo/realistic_logo.png";
+import { useRouter } from "next/navigation";
 
 type Props = {
 	navOpen: () => void;
@@ -17,6 +18,7 @@ type Props = {
 const Nav = ({ navOpen }: Props) => {
 	const [navBg, setNavBg] = useState(false);
 	const pathname = usePathname(); // Get current path
+	const router = useRouter();
 
 	useEffect(() => {
 		const handleNavBg = () => {
@@ -87,6 +89,7 @@ const Nav = ({ navOpen }: Props) => {
 						variant="default"
 						size="default"
 						className="bg-[#FFFFFF] text-[#000000]"
+						onClick={() => router.push("/product")}
 					>
 						Try our Models
 					</Button>

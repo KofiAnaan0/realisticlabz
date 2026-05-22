@@ -10,6 +10,7 @@ import { ApproachType } from "@/types/approachType";
 import Link from "next/link";
 import { FaPlay } from "react-icons/fa";
 import Main from "../ui/Main";
+import { useRouter } from "next/navigation";
 
 interface ApproachProps extends ApproachType {
 	reversed: boolean;
@@ -24,6 +25,7 @@ const ApproachCard = ({
 	videoUrl,
 }: ApproachProps) => {
 	const [playing, setPlaying] = useState(false);
+	const router = useRouter();
 
 	const getYouTubeEmbedUrl = (url: string) => {
 		if (!url) return "";
@@ -91,9 +93,7 @@ const ApproachCard = ({
 									variant="outline"
 									size="sm"
 									className="border-white/60 text-white hover:bg-white/10"
-									onClick={() =>
-										window.dispatchEvent(new CustomEvent("openChatWidget"))
-									}
+									onClick={() => router.push("/product")}
 								>
 									Try Now
 								</Button>

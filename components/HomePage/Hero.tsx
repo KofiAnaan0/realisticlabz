@@ -6,10 +6,12 @@ import H1 from "../ui/H1";
 import { Button } from "../ui/Button";
 import Main from "../ui/Main";
 import Section from "../ui/Section";
+import { useRouter } from "next/navigation";
 
 const Hero = () => {
 	const videoRef = useRef<HTMLDivElement | null>(null);
 	const [isVisible, setIsVisible] = useState(false);
+	const router = useRouter();
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -84,9 +86,7 @@ const Hero = () => {
 						variant="outline"
 						size="default"
 						className="w-full md:w-fit"
-						onClick={() => {
-							window.dispatchEvent(new CustomEvent("openChatWidget"));
-						}}
+						onClick={() => router.push("/product")}
 					>
 						Try Our Speech Models
 					</Button>

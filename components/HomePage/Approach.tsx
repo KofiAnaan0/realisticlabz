@@ -2,7 +2,10 @@ import React from "react";
 import { approachData } from "@/data/approachData";
 import ApproachCard from "../helper/ApproachCard";
 
+
 const Approach = () => {
+	
+
 	return (
 		<section className="relative py-20">
 			{/* Title */}

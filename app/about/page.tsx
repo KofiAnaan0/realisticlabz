@@ -10,7 +10,7 @@ import React from "react";
 const AboutPage = () => {
 	return (
 		<Section className="pt-36 md:pt-38">
-			<Main className="bg-[#7a2a0e]">
+			<Main className="bg-[#7a2a0e] rounded-[32px]">
 				<div className="flex flex-col gap-6 max-w-lg mx-auto">
 					{/* description */}
 					<div>
