@@ -65,8 +65,8 @@ const Hero = () => {
 							className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
 							src={
 								isVisible
-									? "https://www.youtube.com/embed/WxWMTFTrxsY?autoplay=1&mute=1&playsinline=1"
-									: "https://www.youtube.com/embed/WxWMTFTrxsY?mute=1&playsinline=1"
+									? "https://www.youtube.com/embed/FKYMZzve1p8?si=wbGEkEv60KfdXQSr?autoplay=1&mute=1&playsinline=1"
+									: "https://www.youtube.com/embed/FKYMZzve1p8?si=wbGEkEv60KfdXQSr?mute=1&playsinline=1"
 							}
 							title="YouTube video player"
 							frameBorder="0"
