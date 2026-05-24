@@ -63,11 +63,12 @@ const Hero = () => {
 					<div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
 						<iframe
 							className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
-							src={
-								isVisible
-									? "https://www.youtube.com/embed/FKYMZzve1p8?si=wbGEkEv60KfdXQSr?autoplay=1&mute=1&playsinline=1"
-									: "https://www.youtube.com/embed/FKYMZzve1p8?si=wbGEkEv60KfdXQSr?mute=1&playsinline=1"
-							}
+							src="https://www.youtube.com/embed/FKYMZzve1p8?si=wbGEkEv60KfdXQSr"
+							// {
+							// 	isVisible
+							// 		? "https://www.youtube.com/embed/FKYMZzve1p8?si=wbGEkEv60KfdXQSr?autoplay=1&mute=1&playsinline=1"
+							// 		: "https://www.youtube.com/embed/FKYMZzve1p8?si=wbGEkEv60KfdXQSr?mute=1&playsinline=1"
+							// }
 							title="YouTube video player"
 							frameBorder="0"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
